@@ -4,6 +4,7 @@ function Enviar() {
     const cidade = document.getElementById('cidade');
     const texto = document.getElementById('texto');
     const checkboxs = document.querySelectorAll('.especialidade');
+    const aniversario = document.getElementById('aniversario');
 
     // Limpar os errors anteriores
     [nomeCompleto, email, cidade, texto].forEach(el => el.classList.remove('erro'));
@@ -24,6 +25,10 @@ function Enviar() {
     }
     if(texto.value.trim() === '') {
         texto.classList.add('erro');
+        formularioValido = false;
+    }
+    if(aniversario.value.trim() === '') {
+        aniversario.classList.add('erro');
         formularioValido = false;
     }
     if(formularioValido) {
